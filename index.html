@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Мета-теги для правильной кодировки и настройки отображения на мобильных устройствах -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Заголовок веб-страницы, который отображается во вкладке браузера -->
+    <!-- Тег link для иконки сайта -->
+    <link rel="icon" href="C:\Users\Marsel\Desktop\Новая папка\Без имени-2.png" type="image/x-icon">
+    <title>MIDDLE-GROUP</title>
+    <!-- Стили для стилизации страницы в зеленых тонах -->
+    <style>
+        /* Общие стили для всей страницы */
+        body {
+            background-image: url("https://sun9-70.userapi.com/impf/1AF11VhIHik91Jo8UhssC6N-jHJ7ZKgt4TDiCA/S-srpUPRtgM.jpg?size=1920x1920&quality=96&sign=c3156693b8164a149d850081216f81a8&type=album");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #030303;
+            color: #fff;
+        }
+
+        /* Стили для шапки страницы */
+        header {
+            background-color: #030303; /* Зеленый цвет шапки */
+            color: #fff; /* Белый цвет текста */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Стили для раздела "О нас" */
+        #about {
+            padding: 20px;
+            background-color: #242424; /* Светло-зеленый фон раздела */
+            font-size: 18px; /* Размер текста */
+            border-radius: 10px; /* Закругление углов */
+            border: 5px solid #4caf50; /* Обводка с зеленым цветом */
+            margin: 20px auto; /* Отцентрировать блок по горизонтали */
+            max-width: 600px; /* Максимальная ширина блока */
+        }
+
+        /* Стили для раздела "Услуги" */
+        #services {
+            padding: 20px;
+            background-color: #242424; /* Зеленый фон раздела */
+        }
+
+        /* Стили для раздела "Контакты" */
+        #contact {
+            padding: 20px;
+            background-color: #242424; /* Зеленый фон раздела */
+            color: #fff; /* Белый цвет текста */
+        }
+
+        /* Стили для навигационной панели */
+        nav {
+            background-color: #2e7d32; /* Темно-зеленый цвет навигационной панели */
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Стили для ссылок в навигационной панели */
+        nav a {
+            color: #fff; /* Белый цвет текста */
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* Стили для кнопки */
+        .cta-button {
+            display: block;
+            background-color: #4caf50; /* Зеленый цвет кнопки */
+            color: #fff; /* Белый цвет текста */
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Стили для большой длинной картинки */
+        #longImageContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #longImage {
+            max-width: 100%; /* Максимальная ширина 100% */
+            height: auto;
+            border-radius: 20px; /* Закругление углов */
+            border: 10px solid #4caf50; /* Обводка с белым цветом */
+            margin: 20px;
+        }
+
+        /* Стили для футера */
+        footer {
+            background-color: #2e7d32; /* Темно-зеленый цвет футера */
+            color: #fff; /* Белый цвет текста */
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Стили для раздела "О нас", "Наши услуги" и "Контакты" */
+        #about,
+        #services,
+        #contact {
+            padding: 20px;
+            background-color: #242424; /* Фон раздела */
+            font-size: 18px; /* Размер текста */
+            margin: 20px; /* Внешний отступ для выравнивания и создания отступов между блоками */
+            border-radius: 10px; /* Закругление углов */
+            width: 2000px; /* Ширина блока */
+        }
+
+        /* Выравнивание блоков слева */
+        #about,
+        #services,
+        #contact {
+            float: left;
+        }
+
+        /* Стили для раздела "О нас" */
+        #about {
+            clear: both; /* Очистка float для следующего элемента */
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 10px;
+            }
+
+            #about,
+            #services,
+            #contact {
+                padding: 10px;
+                font-size: 16px;
+                width: auto; /* Автоматическая ширина для мобильных устройств */
+            }
+
+            nav a {
+                margin: 0 5px;
+            }
+
+            .cta-button {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Шапка страницы с изображением -->
+    <header
+        style="background-image: url('C:\Users\Marsel\Desktop\Новая папка\midle.jpg'); background-size: cover; background-position: center; color: #fff; padding: 20px; text-align: center;">
+        <!-- Логотип компании -->
+        <img src="C:\Users\Marsel\Desktop\Новая папка\midle.jpg" alt="Логотип компании 3 Друзья"
+            style="max-width: 20%; max-width: 25%">
+    </header>
+
+    <!-- Навигационная панель -->
+    <nav>
+        <a href="#about">НАША ИНФА</a>
+        <a href="#services">чем мы живем</a>
+        <a href="#contact">Как нас найти</a>
+    </nav>
+
+    <!-- Раздел для мобильных устройств с большой длинной картинкой -->
+    <section id="longImageContainer">
+        <!-- Замените 'путь_к_вашей_картинке.jpg' на реальный путь к вашей картинке -->
+        <img id="longImage" src="C:\Users\Marsel\Desktop\Новая папка\Монтажная область 1.png"
+            alt="Описание картинки">
+    </section>
+     <!-- Раздел "О нас" -->
+    <section id="about">
+        <h4>О нас</h4>
+        <p>мы трахаем шлюх-ваших мамок. ебем все танцопол башкирии а также башкирок. ну и самое главное в жизни МИЛФЫ МИЛФЫ МИЛФЫ МИЛФЫ!!!!!!!!.</p>
+    </section>
+    <!-- Раздел "Услуги" -->
+    <section id="services">
+        <h2>наши услуги</h2>
+        <ul>
+            <li>дать по ебалу</li>
+            <li>отсосать наш член</li>
+            <li>ты даун?</li>
+        </ul>
+        <a href="#contact" class="cta-button">мать ебал?</a>
+    </section>
+
+    <!-- Раздел "Контакты" -->
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами, чтобы получить пизды.</p>
+        <p>Email: tebepizda@gmail.com</p>
+        <p>Телефон: +7(996)-104-31-93</p>
+    </section>
+
+    <!-- Футер страницы -->
+    <footer>
+        &copy; 2024 "MIDDLE-GROUP INC."
+    </footer>
+
+    <!-- JavaScript для определения типа устройства и динамического отображения блока для большой длинной картинки -->
+    <script>
+        // JavaScript для определения типа устройства и динамического отображения блока для большой длинной картинки
+        const isMobile = window.matchMedia("only screen and (max-width: 600px)").matches;
+
+        if (!isMobile) {
+            document.getElementById('longImage').style.maxWidth = '50%'; // Измените значение, чтобы установить нужный размер
+        }
+    </script>
+</body>
+
+</html>
