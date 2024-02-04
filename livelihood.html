@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чем мы живем</title>
+    <style>
+        html, body {
+            background-image: url("https://sun9-70.userapi.com/impf/1AF11VhIHik91Jo8UhssC6N-jHJ7ZKgt4TDiCA/S-srpUPRtgM.jpg?size=1920x1920&quality=96&sign=c3156693b8164a149d850081216f81a8&type=album");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #030303;
+            color: #fff;
+        }
+
+        header {
+            background-color: #030303;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 30%;
+            margin-bottom: 10px;
+        }
+
+        .back-to-main {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        .window {
+            flex: 0 0 30%;
+            height: 30vh;
+            margin: 1%;
+            overflow: hidden;
+            position: relative;
+            border: 5px solid #4caf50;
+            border-radius: 10px;
+        }
+
+        .window img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 600px) {
+            .window {
+                flex: 0 0 48%;
+                height: 45vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="C:\Users\Marsel\Desktop\Новая папка\midle.jpg" alt="Логотип компании 3 Друзья" class="logo">
+        <div class="back-to-main" onclick="backToMain()">На главную</div>
+    </header>
+
+    <div class="container">
+        <!-- Окно 1 -->
+        <div class="window">
+            <img src="https://via.placeholder.com/800x800" alt="Image 1">
+        </div>
+        <!-- Окно 2 -->
+        <div class="window">
+            <img src="https://via.placeholder.com/801x801" alt="Image 2">
+        </div>
+        <!-- Окно 3 -->
+        <div class="window">
+            <img src="https://via.placeholder.com/802x802" alt="Image 3">
+        </div>
+        <!-- Окно 4 -->
+        <div class="window">
+            <img src="https://via.placeholder.com/803x803" alt="Image 4">
+        </div>
+        <!-- Окно 5 -->
+        <div class="window">
+            <img src="https://via.placeholder.com/804x804" alt="Image 5">
+        </div>
+        <!-- Окно 6 -->
+        <div class="window">
+            <img src="https://via.placeholder.com/805x805" alt="Image 6">
+        </div>
+    </div>
+
+    <script>
+        // Возврат на главную страницу
+        function backToMain() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

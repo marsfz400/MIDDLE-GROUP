@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-    <!-- Мета-теги для правильной кодировки и настройки отображения на мобильных устройствах -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Заголовок веб-страницы, который отображается во вкладке браузера -->
-    <!-- Тег link для иконки сайта -->
     <link rel="icon" href="img/Без имени-2.png" type="image/x-icon">
     <title>MIDDLE-GROUP</title>
-    <!-- Стили для стилизации страницы в зеленых тонах -->
     <style>
-        /* Общие стили для всей страницы */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-image: url("https://sun9-70.userapi.com/impf/1AF11VhIHik91Jo8UhssC6N-jHJ7ZKgt4TDiCA/S-srpUPRtgM.jpg?size=1920x1920&quality=96&sign=c3156693b8164a149d850081216f81a8&type=album");
             background-size: cover;
@@ -24,58 +23,42 @@
             color: #fff;
         }
 
-        /* Стили для шапки страницы */
         header {
-            background-color: #030303; /* Зеленый цвет шапки */
-            color: #fff; /* Белый цвет текста */
+            background-color: #030303;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
 
-        /* Стили для раздела "О нас" */
-        #about {
-            padding: 20px;
-            background-color: #242424; /* Светло-зеленый фон раздела */
-            font-size: 18px; /* Размер текста */
-            border-radius: 10px; /* Закругление углов */
-            border: 5px solid #4caf50; /* Обводка с зеленым цветом */
-            margin: 20px auto; /* Отцентрировать блок по горизонтали */
-            max-width: 600px; /* Максимальная ширина блока */
-        }
-
-        /* Стили для раздела "Услуги" */
-        #services {
-            padding: 20px;
-            background-color: #242424; /* Зеленый фон раздела */
-        }
-
-        /* Стили для раздела "Контакты" */
+        #about,
+        #services,
         #contact {
             padding: 20px;
-            background-color: #242424; /* Зеленый фон раздела */
-            color: #fff; /* Белый цвет текста */
+            background-color: #242424;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 5px solid #4caf50;
+            margin: 50px auto;
+            max-width: 600px;
         }
 
-        /* Стили для навигационной панели */
         nav {
-            background-color: #2e7d32; /* Темно-зеленый цвет навигационной панели */
+            background-color: #2e7d32;
             padding: 10px;
             text-align: center;
         }
 
-        /* Стили для ссылок в навигационной панели */
         nav a {
-            color: #fff; /* Белый цвет текста */
+            color: #fff;
             text-decoration: none;
             margin: 0 10px;
             font-weight: bold;
         }
 
-        /* Стили для кнопки */
         .cta-button {
             display: block;
-            background-color: #4caf50; /* Зеленый цвет кнопки */
-            color: #fff; /* Белый цвет текста */
+            background-color: #4caf50;
+            color: #fff;
             padding: 10px;
             text-decoration: none;
             border-radius: 5px;
@@ -83,24 +66,21 @@
             text-align: center;
         }
 
-        /* Стили для большой длинной картинки */
-        #longImageContainer {
+        .long-image-container {
             text-align: center;
-            
         }
 
-        #longImage {
-            max-width: 100%; /* Максимальная ширина 100% */
+        .long-image {
+            max-width: 30%;
             height: auto;
-            border-radius: 20px; /* Закругление углов */
-            border: 10px solid #4caf50; /* Обводка с белым цветом */
+            border-radius: 20px;
+            border: 10px solid #4caf50;
             margin: 20px;
         }
 
-        /* Стили для футера */
         footer {
-            background-color: #2e7d32; /* Темно-зеленый цвет футера */
-            color: #fff; /* Белый цвет текста */
+            background-color: #2e7d32;
+            color: #fff;
             text-align: center;
             padding: 20px;
             position: fixed;
@@ -108,31 +88,80 @@
             width: 100%;
         }
 
-        /* Стили для раздела "О нас", "Наши услуги" и "Контакты" */
-        #about,
-        #services,
-        #contact {
+        #scrollTopButton {
+            display: none;
+            position: fixed;
+            bottom: 300px;
+            right: 300px;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 25px;
+            width: 80px;
+            height: 80px;
+        }
+
+        #scrollTopButton:hover {
+            background-color: #2e7d32;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: 5% auto;
             padding: 20px;
-            background-color: #242424; /* Фон раздела */
-            font-size: 18px; /* Размер текста */
-            margin: 20px; /* Внешний отступ для выравнивания и создания отступов между блоками */
-            border-radius: 10px; /* Закругление углов */
-            width: 2000px; /* Ширина блока */
+            max-width: 600px;
+            background-color: #242424;
+            border-radius: 10px;
+            position: relative;
         }
 
-        /* Выравнивание блоков слева */
-        #about,
-        #services,
-        #contact {
-            float: center;
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        /* Стили для раздела "О нас" */
-        #about {
-            clear: both; /* Очистка float для следующего элемента */
+        #modal-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
-        /* Медиа-запрос для мобильных устройств */
+        #modal-text {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #photo-btn {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         @media screen and (max-width: 600px) {
             header {
                 padding: 10px;
@@ -141,13 +170,13 @@
             #about,
             #services,
             #contact {
-                padding: 10px;
+                padding: 30px;
                 font-size: 16px;
-                width: auto; /* Автоматическая ширина для мобильных устройств */
+                width: 90%;
             }
 
             nav a {
-                margin: 0 5px;
+                margin: 23 80px;
             }
 
             .cta-button {
@@ -158,64 +187,107 @@
 </head>
 
 <body>
-    <!-- Шапка страницы с изображением -->
-    <header
-         background-size: cover; background-position: center; color: #fff; padding: 20px; text-align: center;">
-        <!-- Логотип компании -->
-        <img src="img/midle.jpg" alt="Логотип компании 3 Друзья"
-            style="max-width: 20%; max-width: 25%">
+    <header>
+        <img src="C:\Users\Marsel\Desktop\Новая папка\midle.jpg" alt="Логотип компании 3 Друзья" style="max-width: 30%;">
     </header>
 
-    <!-- Навигационная панель -->
     <nav>
         <a href="#about">НАША ИНФА</a>
-        <a href="#services">чем мы живем</a>
+        <a href="livelihood.html">чем мы живем</a>
         <a href="#contact">Как нас найти</a>
+        <a id="photo-btn">Москва лучше Уфы?</a>
     </nav>
 
-    <!-- Раздел для мобильных устройств с большой длинной картинкой -->
-    <section id="longImageContainer">
-        <!-- Замените 'путь_к_вашей_картинке.jpg' на реальный путь к вашей картинке -->
-        <img id="longImage" src="img/Монтажная область 1.png"
-            alt="Описание картинки">
-    </section>
-     <!-- Раздел "О нас" -->
+    <div class="long-image-container">
+        <img class="long-image" src="C:\Users\Marsel\Desktop\Новая папка\Монтажная область 1.png" alt="Описание картинки 1">
+    </div>
+
     <section id="about">
         <h4>О нас</h4>
-        <p>мы трахаем шлюх-ваших мамок. ебем все танцопол башкирии а также башкирок. ну и самое главное в жизни МИЛФЫ МИЛФЫ МИЛФЫ МИЛФЫ!!!!!!!!.</p>
-    </section>
-    <!-- Раздел "Услуги" -->
-    <section id="services">
-        <h2>наши услуги</h2>
-        <ul>
-            <li>дать по ебалу</li>
-            <li>отсосать наш член</li>
-            <li>ты даун?</li>
-        </ul>
-        <a href="#contact" class="cta-button">мать ебал?</a>
+        <p>Мы - профессиональные ебыри и авторитеты для всех, кто про нас в курсе. Если хотите стать такими же ебанутыми и крутыми как мы, то даже не пытайтесь, сосите наш хуй, ублюдки. И самое главное: МИЛФЫ МИЛФЫ МИЛФЫ!!!!!!!!!!!!!</p>
     </section>
 
-    <!-- Раздел "Контакты" -->
+    <div class="long-image-container">
+        <img class="long-image" src="C:\Users\Marsel\Desktop\Новая папка\Монтажная область 1.png" alt="Описание картинки 2">
+    </div>
+
+    <section id="services">
+        <h2>Наши услуги</h2>
+        <ul>
+            <li>Дать пизды вашим обидчикам </li>
+            <li>Разрешить пососать наши хуи</li>
+            <li>Другие вопросы по нашей деятельности</li>
+        </ul>
+        <a href="#contact" class="cta-button">Ещё что-то? Тогда иди нахуй</a>
+    </section>
+
+    <div class="long-image-container">
+        <img class="long-image" src="C:\Users\Marsel\Desktop\Новая папка\Монтажная область 1.png" alt="Описание картинки 3">
+    </div>
+
     <section id="contact">
         <h2>Контакты</h2>
-        <p>Свяжитесь с нами, чтобы получить пизды.</p>
-        <p>Email: tebepizda@gmail.com</p>
+        <p>Свяжитесь с нами, чтобы моментально опиздюлиться, либо опиздюлить другого</p>
+        <p>Email: yyebalovich@mail.ru</p>
         <p>Телефон: +7(996)-104-31-93</p>
     </section>
-
-    <!-- Футер страницы -->
+    
     <footer>
         &copy; 2024 "MIDDLE-GROUP INC."
     </footer>
 
-    <!-- JavaScript для определения типа устройства и динамического отображения блока для большой длинной картинки -->
+    <button id="scrollTopButton" onclick="scrollToTop()">Вверх</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="https://media.istockphoto.com/id/533837393/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BA%D0%BB%D0%BE%D1%83%D0%BD.jpg?s=612x612&w=0&k=20&c=AbY-4_kRPJjgEjKPgPX_9LN3b_FzSGC80VmYfNNzkUU=" alt="Описание фотографии">
+            <p id="modal-text">ты клоун</p>
+        </div>
+    </div>
+
     <script>
-        // JavaScript для определения типа устройства и динамического отображения блока для большой длинной картинки
         const isMobile = window.matchMedia("only screen and (max-width: 600px)").matches;
 
         if (!isMobile) {
-            document.getElementById('longImage').style.maxWidth = '50%'; // Измените значение, чтобы установить нужный размер
+            document.querySelectorAll('.long-image').forEach(image => {
+                image.style.maxWidth = '50%';
+            });
         }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var button = document.getElementById("scrollTopButton");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+
+        document.getElementById('photo-btn').addEventListener('click', openModal);
+
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            if (event.target === document.getElementById('myModal')) {
+                closeModal();
+            }
+        };
     </script>
 </body>
 
