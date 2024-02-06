@@ -1,119 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чем мы живем</title>
-    <style>
-        html, body {
-            background-image: url("https://sun6-23.userapi.com/impf/1AF11VhIHik91Jo8UhssC6N-jHJ7ZKgt4TDiCA/S-srpUPRtgM.jpg?size=1920x1920&quality=96&sign=c3156693b8164a149d850081216f81a8&type=album");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #030303;
-            color: #fff;
-        }
+  <meta charset="UTF-8">
+  <title>Найди пару</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- подключаем нормализатор CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <!-- подключаем свои стили -->
+    <link rel="stylesheet" href="./style.css">
 
-        header {
-            background-color: #030303;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo {
-            max-width: 30%;
-            margin-bottom: 10px;
-        }
-
-        .back-to-main {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: stretch;
-            min-height: 100vh;
-        }
-
-        .window {
-            flex: 0 0 30%;
-            height: 30vh;
-            margin: 1%;
-            overflow: hidden;
-            position: relative;
-            border: 5px solid #4caf50;
-            border-radius: 10px;
-        }
-
-        .window img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @media screen and (max-width: 600px) {
-            .window {
-                flex: 0 0 48%;
-                height: 45vh;
-            }
-        }
-    </style>
 </head>
-
 <body>
-    <header>
-        <img src="img/midle.jpg" alt="Логотип компании 3 Друзья" class="logo">
-        <div class="back-to-main" onclick="backToMain()">На главную</div>
-    </header>
+    <!-- общий блок для всего -->
+    <div class="wrap">
+        <!-- блок с игрой -->
+        <div class="game"></div>
+        <!-- модальное окно, которое появится после сбора всех пар -->
+        <div class="modal-overlay">
+            <div class="modal">
+                <!-- поздравительная надпись -->
+                <h2 class="winner">Победа!</h2>
+                <!-- кнопка перезапуска игры -->
+                <button class="restart">Сыграем ещё?</button>
+            </div>
+        </div>
+  </div>
 
-    <div class="container">
-        <!-- Окно 1 -->
-        <div class="window">
-            <img src="https://sun9-52.userapi.com/impf/f0XxpEFRHVlJ5VgDwJZyWgEQU59kKbnzFGvbPg/bHKfVlWCma4.jpg?size=2560x1920&quality=95&sign=53f9d06ae16faa451254667146a18023&type=album" alt="Image 1">
-        </div>
-        <!-- Окно 2 -->
-        <div class="window">
-            <img src="https://sun9-12.userapi.com/impf/eYmu9C1oacK9nhCVEQlzEtifawn71Mb4VSxiEA/AFvrwP_un1s.jpg?size=1280x591&quality=95&sign=b2a66928502eb2e164bab63b1ce8470d&type=album" alt="Image 2">
-        </div>
-        <!-- Окно 3 -->
-        <div class="window">
-            <img src="https://sun9-23.userapi.com/impf/mYR4Oz0DHo4qKXFkAfSSpn9X0xq4gl2mbuq5sQ/eZvYDgE0Mrs.jpg?size=1280x960&quality=95&sign=114a274859af5add7ac1fbabe72adfe6&type=album" alt="Image 3">
-        </div>
-        <!-- Окно 4 -->
-        <div class="window">
-            <img src="https://sun9-19.userapi.com/impf/8QPcR3kHIjJVv6V0MT7cPzcK4ovjsDar1tBKNg/4So3wtoVw8Q.jpg?size=1280x960&quality=95&sign=db55467646195f2296037aa851fac2df&type=album" alt="Image 4">
-        </div>
-        <!-- Окно 5 -->
-        <div class="window">
-            <img src="https://sun9-70.userapi.com/impf/jZQN-jOuXFxzBbJZobKJBvB_U_JuvCO3KJL70w/JgwOpCUHrzA.jpg?size=960x1280&quality=95&sign=2b924f094cdad0a3ee9db9529e7df283&type=album" alt="Image 5">
-        </div>
-        <!-- Окно 6 -->
-        <div class="window">
-            <img src="https://sun9-71.userapi.com/impf/v79Ba2ZknZuEq05x6q_AoQEldaegHgbJPqp-gg/9rCBi3Iwid4.jpg?size=960x1280&quality=95&sign=c2478a67c63ce960c19a0ffe8a8e580c&type=album" alt="Image 6">
-        </div>
-    </div>
+      <!-- подключаем jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- и наш скрипт -->
+    <script  src="./script.js"></script>
 
-    <script>
-        // Возврат на главную страницу
-        function backToMain() {
-            window.location.href = 'index.html';
-        }
-    </script>
 </body>
-
 </html>
